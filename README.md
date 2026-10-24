@@ -12,7 +12,7 @@
 <h2>Development</h2>
 <p>To develop this web app, I ran a XAMPP development web server (including Apache and a MySQL database) and coded using Visual Studio Code. I used Godot game engine and its GDScript (Python based) to develop the client-side program. I used AI tools such as Claude and ChatGPT to replace my traditional workflow (plowing through Youtube tutorials and Stack Overflow entries) with a system that could give me advice tailored to my project. AI helped me quickly learn syntax and brainstorm solutions to more complex issues.</p>
 
-<p>A MySQL configuration file for the Eversole Network database exported from PHPMyAdmin (a database management application) is also included in this repository.</p>
+<p>A MySQL configuration file for the Eversole Network database exported from PHPMyAdmin (a database management application) is also included in this repository. Database files for both version 1 and version 2 are included in their respective folders. The version 1 and version 2 folders contain 2 different versions of the web server code; see technical description for information on which version contains what. The godot folder (only 1 version) is also included and contains the client code used for the system. "empty_game" includes just the client loader while "with_client" contains the actual client program; again, see technical description to understand what this means. </p>
 
 <p>Throughout the process, I met Mr. Eversole (hence Eversole Network) multiple times to discuss progress and help understand features he'd like me to add. He is the former teacher I was creating this for.</p>
 
