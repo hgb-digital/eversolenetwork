@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdupam7ll32ys"]
+
+[ext_resource type="Script" uid="uid://7l82572wifdu" path="res://ENET/enet_loader.gd" id="1_pf6dx"]
+
+[node name="EnetLoader" type="Node2D"]
+script = ExtResource("1_pf6dx")
+
+[node name="status" type="Label" parent="."]
+offset_left = 1359.0
+offset_top = 1038.0
+offset_right = 1902.0
+offset_bottom = 1061.0
+text = "Welcome to ENET"
+horizontal_alignment = 2
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

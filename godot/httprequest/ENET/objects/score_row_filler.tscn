@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://d33w4p6xkndli"]
+
+[ext_resource type="FontFile" uid="uid://dhupj8migdxw7" path="res://ENET/UI/VCR_OSD_MONO_1.001.ttf" id="1_w0e56"]
+
+[node name="Score" type="Control"]
+texture_filter = 1
+custom_minimum_size = Vector2(468, 83)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 468.0
+offset_bottom = 83.0
+mouse_filter = 2
+
+[node name="no_scores" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 6139.0
+offset_bottom = 910.0
+scale = Vector2(0.07, 0.07)
+theme_override_fonts/font = ExtResource("1_w0e56")
+theme_override_font_sizes/font_size = 506
+text = "No Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="load_more" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 16.0
+offset_right = 330.0
+offset_bottom = 67.0
+stretch_mode = 4
+metadata/texture_path = {
+"texture_hover": "res://ENET/UI/load_more_selected.png",
+"texture_normal": "res://ENET/UI/load_more_deselected.png"
+}

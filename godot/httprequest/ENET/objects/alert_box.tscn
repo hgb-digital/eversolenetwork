@@ -1,0 +1,155 @@
+[gd_scene load_steps=8 format=3 uid="uid://cruyowr3gteme"]
+
+[ext_resource type="Script" uid="uid://bcf1ttdd3scqu" path="res://ENET/scripts/alert_box.gd" id="1_qcprm"]
+[ext_resource type="Texture2D" uid="uid://glv5g7ihajm1" path="res://ENET/UI/in-game-alert.png" id="2_aidg7"]
+[ext_resource type="FontFile" uid="uid://dhupj8migdxw7" path="res://ENET/UI/VCR_OSD_MONO_1.001.ttf" id="2_jtgx1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o13vl"]
+
+[sub_resource type="Animation" id="Animation_3rtmd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m2k73"]
+resource_name = "load"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3.5, 4),
+"transitions": PackedFloat32Array(0.203063, 1, 0.210224, 1),
+"update": 0,
+"values": [Vector2(0, -132), Vector2(0, 0), Vector2(0, 0), Vector2(0, -132)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"finished"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cqhkf"]
+_data = {
+&"RESET": SubResource("Animation_3rtmd"),
+&"load": SubResource("Animation_m2k73")
+}
+
+[node name="alert_box" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -132.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_qcprm")
+
+[node name="box" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -188.0
+offset_top = 42.11
+offset_right = 189.0
+offset_bottom = 117.51
+grow_horizontal = 2
+texture = ExtResource("2_aidg7")
+metadata/texture_path = "res://ENET/UI/in-game-alert.png"
+
+[node name="title" type="Label" parent="box"]
+texture_filter = 1
+offset_left = 22.0
+offset_top = 15.89
+offset_right = 592.0
+offset_bottom = 87.89
+scale = Vector2(0.16, 0.16)
+theme_override_colors/font_color = Color(0.379722, 0.844634, 0.714766, 1)
+theme_override_fonts/font = ExtResource("2_jtgx1")
+theme_override_font_sizes/font_size = 81
+text = "Score logged"
+
+[node name="score" type="Label" parent="box"]
+texture_filter = 1
+offset_left = 23.0
+offset_top = 33.89
+offset_right = 645.0
+offset_bottom = 105.89
+scale = Vector2(0.37, 0.37)
+theme_override_fonts/font = ExtResource("2_jtgx1")
+theme_override_font_sizes/font_size = 81
+text = "12343343"
+
+[node name="ranking" type="Control" parent="box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -772.0
+offset_top = -42.11
+offset_right = -772.0
+offset_bottom = -42.11
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="number" type="Label" parent="box/ranking"]
+texture_filter = 1
+offset_left = 1065.0
+offset_top = 67.0
+offset_right = 1265.0
+offset_bottom = 139.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("2_jtgx1")
+theme_override_font_sizes/font_size = 81
+text = "#242"
+horizontal_alignment = 2
+
+[node name="top_ranking" type="AnimatedSprite2D" parent="box/ranking"]
+texture_filter = 1
+position = Vector2(1103, 79)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_o13vl")
+metadata/texture_path = {
+"1": ["res://ENET/UI/highscore.png"],
+"2": ["res://ENET/UI/bronze.png"],
+"3": ["res://ENET/UI/silver.png"]
+}
+
+[node name="pr" type="Sprite2D" parent="box/ranking"]
+texture_filter = 1
+position = Vector2(1051, 79)
+scale = Vector2(3.995, 3.995)
+metadata/texture_path = "res://ENET/UI/pr.png"
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cqhkf")
+}
+autoplay = "load"

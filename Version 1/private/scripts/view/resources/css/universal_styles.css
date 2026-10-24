@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'pixel';
+    src: url('/_fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: 'pixel', Arial, sans-serif;
+}
+
+button {
+    background-color: white;
+}
+
+button:hover {
+    background-color: lightgreen;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;      /* Make body fill full screen */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+footer {
+    margin-top: auto;       /* Push footer to bottom */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body > *:not(header):not(footer) {
+    margin: .25em;
+}

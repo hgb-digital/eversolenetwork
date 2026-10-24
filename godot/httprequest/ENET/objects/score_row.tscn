@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://dncvf15xkccbx"]
+
+[ext_resource type="Texture2D" uid="uid://byabcaso46ov7" path="res://ENET/UI/scorecard.png" id="1_yyvtj"]
+[ext_resource type="Script" uid="uid://1wrevyv2mf26" path="res://ENET/scripts/score_row.gd" id="2_if8bm"]
+[ext_resource type="FontFile" uid="uid://dhupj8migdxw7" path="res://ENET/UI/VCR_OSD_MONO_1.001.ttf" id="5_6k6w7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_igb30"]
+
+[node name="Score" type="TextureRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(468, 83)
+mouse_filter = 2
+texture = ExtResource("1_yyvtj")
+stretch_mode = 4
+script = ExtResource("2_if8bm")
+
+[node name="top_ranking" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(405, 41)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_igb30")
+metadata/texture_path = {
+"1": ["res://ENET/UI/highscore.png"],
+"2": ["res://ENET/UI/bronze.png"],
+"3": ["res://ENET/UI/silver.png"]
+}
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 53.0
+offset_right = 2325.0
+offset_bottom = 265.0
+scale = Vector2(0.07, 0.07)
+theme_override_fonts/font = ExtResource("5_6k6w7")
+theme_override_font_sizes/font_size = 241
+text = "Admin"
+clip_text = true
+
+[node name="score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 16.0
+offset_right = 4994.0
+offset_bottom = 461.0
+scale = Vector2(0.07, 0.07)
+theme_override_fonts/font = ExtResource("5_6k6w7")
+theme_override_font_sizes/font_size = 506
+text = "5353423"
+clip_text = true
+
+[node name="rank" type="Label" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 26.0
+offset_right = 5038.0
+offset_bottom = 471.0
+scale = Vector2(0.07, 0.07)
+theme_override_fonts/font = ExtResource("5_6k6w7")
+theme_override_font_sizes/font_size = 506
+text = "#36"
+horizontal_alignment = 2
+clip_text = true

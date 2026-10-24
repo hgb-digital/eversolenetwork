@@ -1,0 +1,17 @@
+table {
+    border:1px solid black;
+}
+
+td {
+    padding: .25em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#game_name {
+    padding-right: 5.5em;
+}
+
+form {
+    margin-top: 1em;
+}
