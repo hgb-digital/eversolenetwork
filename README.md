@@ -1,4 +1,4 @@
-# Eversole Network
+<img width="1120" height="305" alt="enet" src="https://github.com/user-attachments/assets/bd5f5e18-a81f-41d2-8ba1-630bd46baf19" />
 
 **Hudson Brackeen**  
 *Uploaded for the MIT Maker Portfolio*
