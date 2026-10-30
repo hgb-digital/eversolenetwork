@@ -1,6 +1,7 @@
 <h1>Eversole Network</h1>
 <p><strong>Hudson Brackeen</strong><br>
 <em>Uploaded for the MIT Maker Portfolio</em></p>
+<p>For reviewers: This is an extensive document that outlines the majority of the systems housed in this project. I understand your time is limited so I would recommend reviewing the bullet points under "Client Side" and "Server Side", only reading elsewhere if you'd like to know more information.</p>
 
 <hr>
 
